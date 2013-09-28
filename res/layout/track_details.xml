@@ -17,7 +17,6 @@
         android:layout_alignTop="@+id/thumbnail"
         android:layout_toRightOf="@+id/thumbnail"
         android:text="@string/track_name"
-        android:textColor="#040404"
         android:textSize="15sp"
         android:textStyle="bold"
         android:typeface="sans" />
@@ -33,7 +32,6 @@
         android:layout_marginTop="1dip"
         android:layout_toRightOf="@+id/thumbnail"
         android:text="@string/track_artist"
-        android:textColor="#343434"
         android:textSize="15sp" />
 
     <!-- ListRow Left sied Thumbnail image -->

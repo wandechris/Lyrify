@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.actionbarsherlock.app.SherlockListFragment;
 import com.tropicdreams.lyrify.TrackDetailsActivity;
 import com.tropicdreams.lyrify.adapter.TrackAdapter;
 import com.tropicdreams.lyrify.managers.AlertDialogManager;
@@ -17,12 +18,11 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
 import android.text.Html;
 import android.view.View;
 import android.widget.ListView;
 
-public class TrackList extends ListFragment {
+public class TrackList extends SherlockListFragment {
 
 	// KEY Strings
 	public static String KEY_TRACK_ID = "track_id"; // id of the place

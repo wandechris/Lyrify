@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/list_selector"
     android:orientation="horizontal"
     android:padding="5dip" >
 
@@ -32,7 +31,6 @@
         android:layout_alignTop="@+id/thumbnail"
         android:layout_toRightOf="@+id/thumbnail"
         android:text="@string/track_name"
-        android:textColor="#040404"
         android:typeface="sans" 
         android:textSize="15sp"
         android:textStyle="bold"/>
@@ -48,7 +46,6 @@
         android:layout_marginTop="1dip"
         android:layout_toRightOf="@+id/thumbnail"
         android:text="@string/track_artist"
-        android:textColor="#343434"
         android:textSize="15sp" />
       
      <!-- Rightend Arrow -->    

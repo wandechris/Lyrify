@@ -3,12 +3,13 @@ package com.tropicdreams.lyrify;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuItem;
 import com.tropicdreams.lyrify.image.ImageLoader;
 import com.tropicdreams.lyrify.managers.AlertDialogManager;
 import com.tropicdreams.lyrify.managers.ConnectionDetector;
 import com.tropicdreams.lyrify.managers.Requests;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -18,7 +19,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class TrackDetailsActivity extends Activity {
+public class TrackDetailsActivity extends SherlockActivity {
 	Intent i;
 	TextView name;
 	TextView artist;
@@ -38,6 +39,9 @@ public class TrackDetailsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.track_details);
+		
+		getSupportActionBar().setHomeButtonEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		Load y = new Load();
 		y.execute();
@@ -155,5 +159,18 @@ class Load extends AsyncTask<String, Void, JSONObject> {
 	    }
 	}
 	
+@Override
+public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+
+    case android.R.id.home:
+         finish();
+         break;
+
+    default:
+        return super.onOptionsItemSelected(item);
+    }
+    return false;
+}
 
 }
