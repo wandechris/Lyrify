@@ -1,8 +1,15 @@
-package com.tropicdreams.lyrify;
+package com.tropicdreams.lyrify.adapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
+
+
+import com.tropicdreams.lyrify.R;
+import com.tropicdreams.lyrify.R.id;
+import com.tropicdreams.lyrify.R.layout;
+import com.tropicdreams.lyrify.fragments.TrackList;
 
 import android.app.Activity;
 import android.content.Context;

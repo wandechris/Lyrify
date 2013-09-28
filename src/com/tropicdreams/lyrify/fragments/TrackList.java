@@ -1,4 +1,4 @@
-package com.tropicdreams.lyrify;
+package com.tropicdreams.lyrify.fragments;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,12 +7,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.tropicdreams.lyrify.adapter.TrackAdapter;
+import com.tropicdreams.lyrify.managers.AlertDialogManager;
+import com.tropicdreams.lyrify.managers.ConnectionDetector;
+import com.tropicdreams.lyrify.managers.Requests;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.text.Html;
+import android.view.View;
+import android.widget.ListView;
 
 public class TrackList extends ListFragment {
 
@@ -62,10 +69,11 @@ public class TrackList extends ListFragment {
 				
 	
 	}
+	public ArrayList<HashMap<String, String>> trackListItems = new ArrayList<HashMap<String, String>>();
 	
 	class Load extends AsyncTask<String, Void, JSONObject> {
 		
-		public ArrayList<HashMap<String, String>> trackListItems = new ArrayList<HashMap<String, String>>();
+		
 		
 		@Override
 		protected void onPreExecute() {
@@ -192,7 +200,10 @@ public class TrackList extends ListFragment {
 	    }
 	}
 	
-	
+	@Override
+	public void onListItemClick(ListView l, View v, int position, long id) {
+		// String LyricId = trackListItems.get(position).get(KEY_LYRICS_ID); 
+	}
 	
 	
 }

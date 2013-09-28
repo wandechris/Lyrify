@@ -1,4 +1,4 @@
-package com.tropicdreams.lyrify;
+package com.tropicdreams.lyrify.managers;
 
 import android.app.Activity;
 import android.app.AlertDialog;

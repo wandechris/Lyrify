@@ -1,4 +1,4 @@
-package com.tropicdreams.lyrify;
+package com.tropicdreams.lyrify.managers;
 
 import java.io.BufferedReader;
 import java.io.IOException;

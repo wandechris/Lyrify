@@ -1,4 +1,4 @@
-package com.tropicdreams.lyrify;
+package com.tropicdreams.lyrify.managers;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
