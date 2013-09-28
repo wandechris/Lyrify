@@ -3,6 +3,7 @@ package com.tropicdreams.lyrify;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.tropicdreams.lyrify.image.ImageLoader;
 import com.tropicdreams.lyrify.managers.AlertDialogManager;
 import com.tropicdreams.lyrify.managers.ConnectionDetector;
 import com.tropicdreams.lyrify.managers.Requests;
@@ -14,6 +15,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class TrackDetailsActivity extends Activity {
@@ -21,6 +23,8 @@ public class TrackDetailsActivity extends Activity {
 	TextView name;
 	TextView artist;
 	TextView lyric;
+	ImageView img;
+	public ImageLoader imageLoader; 
 	
 	AlertDialogManager alert = new AlertDialogManager();
 
@@ -41,11 +45,14 @@ public class TrackDetailsActivity extends Activity {
 		name = (TextView)findViewById(R.id.list_name);
 		artist = (TextView)findViewById(R.id.list_vic);
 		lyric = (TextView)findViewById(R.id.lyricview);
+		img = (ImageView)findViewById(R.id.list_image);
+		imageLoader=new ImageLoader(this.getApplicationContext());
 		
 	}
 	
 	String tName;
 	String tArtist;
+	String image;
 	
 class Load extends AsyncTask<String, Void, JSONObject> {
 		
@@ -69,6 +76,7 @@ class Load extends AsyncTask<String, Void, JSONObject> {
 	        	i = TrackDetailsActivity.this.getIntent();
 	        	tName = i.getExtras().getString("name");
 	        	tArtist = i.getExtras().getString("artist");
+	        	image = i.getExtras().getString("image");
 	        	String lyrics = i.getExtras().getString("lyric");
 	        	
 	        	Requests request = new Requests();
@@ -86,6 +94,7 @@ class Load extends AsyncTask<String, Void, JSONObject> {
 	    protected void onPostExecute(JSONObject feed) {
 	    	name.setText(tName);
         	artist.setText(tArtist);
+        	imageLoader.DisplayImage(image, img);
 	    	try {
 	    		JSONObject message = feed.getJSONObject("message");
 	    		JSONObject body = message.getJSONObject("body");

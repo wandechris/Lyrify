@@ -28,7 +28,7 @@ public class TrackList extends ListFragment {
 	public static String KEY_TRACK_ID = "track_id"; // id of the place
 	public static String KEY_TRACK_NAME = "track_name"; // name of the place
 	public static String KEY_LYRICS_ID = "lyrics_id"; // name of the place
-	// public static String KEY_ICON = "icon"; // name of the place
+	public static String KEY_ICON = "album_coverart_100x100"; // name of the place
 	public static String KEY_ARTIST_NAME = "artist_name"; // Place area name
 	public static String KEY_ALBUM_NAME = "album_name"; // Place area name
 
@@ -131,6 +131,7 @@ public class TrackList extends ListFragment {
 						String artistName = track.getString(KEY_ARTIST_NAME);
 						String albumName = track.getString(KEY_ALBUM_NAME);
 						String lyricsId = track.getString(KEY_LYRICS_ID);
+						String icon = track.getString(KEY_ICON);
 						
 						// creating new HashMap
 						HashMap<String, String> map = new HashMap<String, String>();
@@ -141,6 +142,7 @@ public class TrackList extends ListFragment {
 						map.put(KEY_ARTIST_NAME, artistName);
 						map.put(KEY_ALBUM_NAME, albumName);
 						map.put(KEY_LYRICS_ID, lyricsId);
+						map.put(KEY_ICON, icon);
 
 						// adding HashList to ArrayList
 						trackListItems.add(map);
@@ -207,9 +209,11 @@ public class TrackList extends ListFragment {
 		String LyricId = trackListItems.get(position).get(KEY_TRACK_ID);
 		String name = trackListItems.get(position).get(KEY_TRACK_NAME);
 		String artist = trackListItems.get(position).get(KEY_ARTIST_NAME);
+		String img = trackListItems.get(position).get(KEY_ICON);
 		i.putExtra("name", name);
 		i.putExtra("artist", artist);
 		i.putExtra("lyric", LyricId);
+		i.putExtra("image", img);
 		startActivity(i);
 	}
 	
