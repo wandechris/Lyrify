@@ -64,11 +64,12 @@
         android:background="@android:color/darker_gray" />
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+        android:id="@+id/lyricview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/view1"
         android:layout_marginTop="14dp"
-        android:text="@string/lyric" />
+        android:text="@string/lyric"
+        android:scrollbars="vertical" />
 
 </RelativeLayout>

@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.tropicdreams.lyrify.TrackDetailsActivity;
 import com.tropicdreams.lyrify.adapter.TrackAdapter;
 import com.tropicdreams.lyrify.managers.AlertDialogManager;
 import com.tropicdreams.lyrify.managers.ConnectionDetector;
@@ -202,7 +203,14 @@ public class TrackList extends ListFragment {
 	
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
-		// String LyricId = trackListItems.get(position).get(KEY_LYRICS_ID); 
+		i = new Intent(getActivity(), TrackDetailsActivity.class);
+		String LyricId = trackListItems.get(position).get(KEY_TRACK_ID);
+		String name = trackListItems.get(position).get(KEY_TRACK_NAME);
+		String artist = trackListItems.get(position).get(KEY_ARTIST_NAME);
+		i.putExtra("name", name);
+		i.putExtra("artist", artist);
+		i.putExtra("lyric", LyricId);
+		startActivity(i);
 	}
 	
 	
